@@ -59,7 +59,7 @@
   <div id="imageContainer"></div>
 
   <script>
-    let currentImageIndex = 1; // 默认显示第一张图片
+    let currentImageIndex = 5; // 默认显示第一张图片
 
     function updateImage() {
       const imageContainer = document.getElementById('imageContainer');
@@ -68,10 +68,10 @@
 
     function changeImage(offset) {
       currentImageIndex += offset;
-      if (currentImageIndex < 1) {
-        currentImageIndex = 1;
-      } else if (currentImageIndex > 9999) { // 假设图片总数不超过9999
-        currentImageIndex = 9999;
+      if (currentImageIndex < 5) {
+        currentImageIndex = 5;
+      } else if (currentImageIndex > 1895) { // 假设图片总数不超过9999
+        currentImageIndex = 1895;
       }
       updateImage();
     }
