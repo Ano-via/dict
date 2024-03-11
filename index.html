@@ -1,89 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-    }
-
-    #buttonContainer {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      background-color: transparent;
-    }
-
-    .button {
-      background-color: transparent;
-      color: white;
-      border: none;
-      padding: 10px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    .button:hover {
-      background-color: rgba(255, 255, 255, 0.5);
-    }
-
-    #prevButton {
-      margin-left: auto;
-    }
-
-    #nextButton {
-      margin-right: auto;
-    }
-
-    #imageContainer {
-      width: 100%;
-      height: 100vh;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Viewer</title>
 </head>
 <body>
-
-  <div id="buttonContainer">
-    <button id="prevButton" class="button" onclick="changeImage(-1)">上一页</button>
-    <button id="nextButton" class="button" onclick="changeImage(1)">下一页</button>
-  </div>
-
-  <div id="imageContainer"></div>
-
-  <script>
-    let currentImageIndex = 5; // 默认显示第一张图片
-
-    function updateImage() {
-      const imageContainer = document.getElementById('imageContainer');
-      imageContainer.style.backgroundImage = `url(${getImagePath(currentImageIndex)})`;
-    }
-
-    function changeImage(offset) {
-      currentImageIndex += offset;
-      if (currentImageIndex < 5) {
-        currentImageIndex = 5;
-      } else if (currentImageIndex > 1895) { // 假设图片总数不超过9999
-        currentImageIndex = 1895;
-      }
-      updateImage();
-    }
-
-    function getImagePath(index) {
-      const paddedIndex = index.toString().padStart(4, '0');
-      return `${paddedIndex}.jpg`;
-    }
-
-    // 初始化显示第一张图片
-    updateImage();
-  </script>
-
+    <iframe src="dict.pdf" width="100%" height="600px" style="border: none;"></iframe>
 </body>
 </html>
