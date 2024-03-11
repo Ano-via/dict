@@ -22,6 +22,19 @@
 
     #menu li {
       margin-bottom: 5px;
+      cursor: pointer;
+    }
+
+    #submenu {
+      display: none;
+      list-style: none;
+      padding: 0;
+      margin-left: 20px;
+    }
+
+    #submenu li {
+      margin-bottom: 5px;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -32,6 +45,7 @@
 </div>
 
 <ul id="menu"></ul>
+<ul id="submenu"></ul>
 
 <button onclick="prevImage()">上一页</button>
 <button onclick="nextImage()">下一页</button>
@@ -561,15 +575,37 @@
   var parser = new DOMParser();
   var xmlDoc = parser.parseFromString(xmlString, "text/xml");
   var menuContainer = document.getElementById('menu');
+  var submenuContainer = document.getElementById('submenu');
 
   xmlDoc.querySelectorAll('ITEM').forEach(function(item) {
     var listItem = document.createElement('li');
     listItem.textContent = item.getAttribute('NAME');
     listItem.onclick = function() {
       showImage(parseInt(item.getAttribute('PAGE'), 10));
+      displaySubmenu(item);
     };
     menuContainer.appendChild(listItem);
   });
+
+  function displaySubmenu(item) {
+    submenuContainer.innerHTML = ''; // 清空之前的子菜单
+
+    var subitems = item.querySelectorAll('SUBITEM');
+    if (subitems.length > 0) {
+      subitems.forEach(function(subitem) {
+        var subListItem = document.createElement('li');
+        subListItem.textContent = subitem.getAttribute('NAME');
+        subListItem.onclick = function() {
+          showImage(parseInt(subitem.getAttribute('PAGE'), 10));
+        };
+        submenuContainer.appendChild(subListItem);
+      });
+
+      submenuContainer.style.display = 'block';
+    } else {
+      submenuContainer.style.display = 'none';
+    }
+  }
 </script>
 
 </body>
