@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Viewer</title>
+  <style>
+    #image-container {
+      text-align: center;
+    }
+
+    #image {
+      max-width: 100%;
+      max-height: 400px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="image-container">
+  <img id="image" src="0001.jpg" alt="Image">
+</div>
+
+<button onclick="prevImage()">上一页</button>
+<button onclick="nextImage()">下一页</button>
+
+<script>
+  var currentImageIndex = 1; // 初始图片索引
+
+  function showImage(index) {
+    var image = document.getElementById('image');
+    image.src = pad(index, 4) + '.jpg';
+  }
+
+  function prevImage() {
+    if (currentImageIndex > 1) {
+      currentImageIndex--;
+      showImage(currentImageIndex);
+    }
+  }
+
+  function nextImage() {
+    // 假设最大图片索引为9999
+    if (currentImageIndex < 9999) {
+      currentImageIndex++;
+      showImage(currentImageIndex);
+    }
+  }
+
+  function pad(num, size) {
+    var s = num + "";
+    while (s.length < size) s = "0" + s;
+    return s;
+  }
+</script>
+
+</body>
+</html>
