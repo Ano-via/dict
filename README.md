@@ -26,7 +26,7 @@ All other Modern Chinese Dictionaries on the net is in fact not so handy. It's s
   Chinese character/word searching
 
 ## 打赏 Reward
-如果你觉得本网站好用，可以点一个免费的Star或者Follow。谢谢
+如果你觉得本网站好用，可以点一个免费的Star或者Fork。谢谢
 
-If you find this website useful, please give me a Star or Follow. Thank you
+If you find this website useful, please give me a Star or Fork. Thank you
 ![]()
