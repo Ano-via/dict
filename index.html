@@ -79,7 +79,7 @@
     </div>
     
     <div id="leftright">
-        <img id="mainImage" src="0005.jpg" alt="Image">
+        <img id="mainImage" src="/images/0005.jpg" alt="Image">
         <div id="prevBtn" onclick="changeImage(-1)"></div>
         <div id="nextBtn" onclick="changeImage(1)"></div>
     </div>
@@ -94,7 +94,7 @@
                 currentImageIndex = pageNumber;
                 showImage();
             } else {
-                alert('Page not found!');
+                alert('请输入一个拼音!');
             }
         }
 
@@ -573,7 +573,7 @@
 
         function showImage() {
             const imageName = pad(currentImageIndex, 4) + '.jpg';
-            document.getElementById('mainImage').src = imageName;
+            document.getElementById('mainImage').src = '/images/' + imageName;
         }
 
         function changeImage(offset) {
