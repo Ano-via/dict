@@ -1,3 +1,7 @@
+![现代汉语词典 第七版](https://img.shields.io/badge/%E7%8E%B0%E4%BB%A3%E6%B1%89%E8%AF%AD%E8%AF%8D%E5%85%B8-%E7%AC%AC%E4%B8%83%E7%89%88-red?style=for-the-badge) 
+![GitHub top language](https://img.shields.io/github/languages/top/ano-via/dict?style=for-the-badge)
+![Website](https://img.shields.io/website?url=https%3A%2F%2Fano-via.github.io%2Fdict&style=for-the-badge)
+
 ## 背景 Background
 网络上的现代汉语词典其实都挺麻烦的，装个APP对于我来说很不方便，相信对很多实际使用者来说也很不友好。而且用mdx可能也会出错需要校对。所以我就搞了个网页版的，直接显示扫描图片。这样子才是原汁原味的感觉。
 
