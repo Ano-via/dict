@@ -17,7 +17,10 @@ All other Modern Chinese Dictionaries on the net is in fact not so handy. It's s
 - 顶部搜索框，比目录更佳的解决方案 
   
   Search input rather than menu
+- 图片压缩率 60%
 
+  Compressed pictures by 60%
+  
 ## 效果展示 Screenshot
 ![效果展示](screenshot.jpg)
 
