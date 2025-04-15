@@ -20,14 +20,14 @@ All other Modern Chinese Dictionaries on the net is in fact not so handy. It's s
 - 图片压缩率 60%
 
   Compressed pictures by 60%
-  
+
 ## 效果展示 Screenshot
 ![效果展示](screenshot.jpg)
 
 ## 计划上线 Upcoming
-- 无损压缩图片 
+- 极致压缩图片 
   
-  Lossless image compression
+  Ultra lossless image compression
 - 文字、词语搜索 
   
   Chinese character/word searching
