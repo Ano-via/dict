@@ -1,0 +1,34 @@
+name: Manual Upload Images to Cloudinary
+
+on:
+  workflow_dispatch:  # 仅手动触发
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install Cloudinary CLI
+        run: npm install -g cloudinary-cli
+
+      - name: Configure Cloudinary credentials
+        run: |
+          cloudinary config \
+            --cloud-name ${{ secrets.CLOUDINARY_CLOUD }} \
+            --api-key ${{ secrets.CLOUDINARY_KEY }} \
+            --api-secret ${{ secrets.CLOUDINARY_SECRET }}
+
+      - name: Upload all images in /images to Cloudinary
+        run: |
+          for file in $(find images -type f \( -iname "*.jpg" -o -iname "*.png" -o -iname "*.jpeg" -o -iname "*.webp" \)); do
+            echo "Uploading $file"
+            cloudinary upload "$file" --folder=github-images --overwrite=true
+          done
