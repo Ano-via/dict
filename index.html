@@ -80,7 +80,7 @@
     </div>
     
     <div id="leftright">
-        <img id="mainImage" src="/dict/images_400w/0005.jpg" alt="Image">
+        <img id="mainImage" src="/dict/images_400w/0005.webp" alt="Image">
         <div id="prevBtn" onclick="changeImage(-1)"></div>
         <div id="nextBtn" onclick="changeImage(1)"></div>
     </div>
@@ -577,14 +577,14 @@
 
             const width = window.innerWidth;
 
-            let folder = "/images_800w/"; // 默认
+            let folder = "/dict/images_800w/"; // 默认
 
             if (width <= 600) {
-                folder = "/images_400w/";
+                folder = "/dict/images_400w/";
             } else if (width <= 1200) {
-                folder = "/images_800w/";
+                folder = "/dict/images_800w/";
             } else {
-                folder = "/images_1600w/";
+                folder = "/dict/images_1600w/";
             }
 
             return folder + imageName;
