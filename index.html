@@ -80,7 +80,7 @@
     </div>
     
     <div id="leftright">
-        <img id="mainImage" src="/dict/images_tinypng/0005.jpg" alt="Image">
+        <img id="mainImage" src="/dict/images_400w/0005.jpg" alt="Image">
         <div id="prevBtn" onclick="changeImage(-1)"></div>
         <div id="nextBtn" onclick="changeImage(1)"></div>
     </div>
@@ -572,9 +572,38 @@
             return result ? result.page : null;
         }
 
+        function getImagePath(index) {
+            const imageName = pad(index, 4) + '.webp';
+
+            const width = window.innerWidth;
+
+            let folder = "/images_800w/"; // 默认
+
+            if (width <= 600) {
+                folder = "/images_400w/";
+            } else if (width <= 1200) {
+                folder = "/images_800w/";
+            } else {
+                folder = "/images_1600w/";
+            }
+
+            return folder + imageName;
+        }
+        
+        function preloadImage(src) {
+            const img = new Image();
+            img.src = src;
+        }
+        function preloadAround(index) {
+            preloadImage(getImagePath(index + 1));
+            preloadImage(getImagePath(index - 1));
+        }
+
         function showImage() {
-            const imageName = pad(currentImageIndex, 4) + '.jpg';
-            document.getElementById('mainImage').src = '/dict/images_tinypng/' + imageName;
+            const src = getImagePath(currentImageIndex);
+            preloadImage(src);
+            document.getElementById('mainImage').src = src;
+            preloadAround(currentImageIndex);
         }
 
         function changeImage(offset) {
