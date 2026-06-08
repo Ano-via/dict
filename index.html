@@ -80,7 +80,7 @@
     </div>
     
     <div id="leftright">
-        <img id="mainImage" src="/dict/images_400w/0005.webp" alt="Image">
+        <img id="mainImage" src="/dict/images_final/0005.png" alt="Image">
         <div id="prevBtn" onclick="changeImage(-1)"></div>
         <div id="nextBtn" onclick="changeImage(1)"></div>
     </div>
@@ -571,21 +571,13 @@
             const result = bookmarks.find(item => item.name === name);
             return result ? result.page : null;
         }
-
+        function getExt(index) {
+            return (index <= 4 || index >= 1895) ? ".webp" : ".png";
+        }
         function getImagePath(index) {
-            const imageName = pad(index, 4) + '.webp';
+            const imageName = pad(index, 4) + getExt(index);
 
-            const width = window.innerWidth;
-
-            let folder = "/dict/images_800w/"; // 默认
-
-            if (width <= 600) {
-                folder = "/dict/images_400w/";
-            } else if (width <= 1200) {
-                folder = "/dict/images_800w/";
-            } else {
-                folder = "/dict/images_1600w/";
-            }
+            let folder = "/dict/images_final/"; // 默认
 
             return folder + imageName;
         }
@@ -640,6 +632,11 @@
 
         document.getElementById('nextBtn').addEventListener('mouseenter', showButtons);
         document.getElementById('nextBtn').addEventListener('mouseleave', hideButtons);
+        document.getElementById("searchInput").addEventListener("keydown", function (e) {
+            if (e.key === "Enter") {
+                document.getElementById("searchBtn").click();
+            }
+        });
     </script>
 </body>
 
