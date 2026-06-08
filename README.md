@@ -17,17 +17,23 @@ Every Modern Chinese Dictionary on the net but this is in fact not so handy. It'
 - 顶部搜索框，比目录更佳的解决方案 
   
   Search input rather than menu
-- 图片压缩率 60%
+- 图片压缩率达 88%
 
-  Compressed pictures by 60%
+  Compressed pictures by up to 88%
+
+## 压缩率示例 Example: 1264.jpg
+
+| 格式 (Format) | 大小 (Size) | 相对原图 (Relative Size) |
+|---------|---------:|:---|
+| 原图 (Original) | 910KB | ██████████████████████████████ 100% |
+| TinyPNG | 543KB | ████████████████ 59.7% |
+| WebP (1600w) | 593KB | █████████████████ 65.2% |
+| 1-bit PNG | 113KB | ████ 12.4% |
 
 ## 效果展示 Screenshot
 ![效果展示](screenshot.jpg)
 
 ## 计划上线 Upcoming
-- 极致压缩图片 
-  
-  Ultra lossless image compression
 - 文字、词语搜索 
   
   Chinese character/word searching
